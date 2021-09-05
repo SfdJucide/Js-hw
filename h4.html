@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function add(n1, n2) {
+			return n1 + n2;
+		}
+
+		function sub(n1, n2) {
+			return n1 - n2;
+		}
+
+		function mul(n1, n2) {
+			return n1 * n2;
+		}
+
+		function div(n1, n2) {
+			if (n2 != 0) {
+				return n1 / n2;
+			} else {
+				return "На ноль делить нельзя";
+			}
+		}
+
+		let n1 = +prompt();
+		let n2 = +prompt();
+		alert(add(n1, n2));
+		alert(sub(n1, n2));
+		alert(mul(n1, n2));
+		alert(div(n1, n2));
+
+	</script>
+</body>
+</html>

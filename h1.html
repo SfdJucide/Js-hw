@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//пример 1
+		let a = 1, b = 1, c, d; // a=1, b=1, c,d = undefined
+		c = ++a; // c становится равен 2 тк префиксный инкремент выполняется первее, a = 2
+		alert(c); // ответ: 2
+
+		//пример 2
+		d = b++; // d становится равен 1 тк инкремент постфиксный, b = 2
+		alert(d); // ответ: 1
+
+		//пример 3
+		c = 2 + ++a; // a становится 3 тк префиксный инкремент, а затем складывается с 2 (3 + 2 = 5), a= 3
+		alert(c); // ответ: 5
+
+		//пример 4
+		d = 2 + b++; // d становится 4 тк инкремент постфиксный (2 + b=2), затем b становится 3
+		alert(d); // ответ: 4
+
+		alert(a); // 3
+		alert(b); // 3
+	</script>
+</body>
+</html>

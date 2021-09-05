@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		function add(n1, n2) {
+			return n1 + n2;
+		}
+
+		function sub(n1, n2) {
+			return n1 - n2;
+		}
+
+		function mul(n1, n2) {
+			return n1 * n2;
+		}
+
+		function div(n1, n2) {
+			if (n2 != 0) {
+				return n1 / n2;
+			} else {
+				return "На ноль делить нельзя";
+			}
+		}
+
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case "+":
+				    alert(add(arg1, arg2));
+				    break;
+				case "-":
+				    alert(sub(arg1, arg2));
+				    break;
+				case "*":
+				    alert(mul(arg1, arg2));
+				    break;
+				case "/":
+				    alert(div(arg1, arg2));
+				    break;
+				default:
+				    alert("Вы ввели неверный знак операции!");
+			}
+		}
+
+		let a = +prompt("Введите первое число");
+		let b = +prompt("Введите второе число");
+		let oper = prompt("Введите знак операции");
+		mathOperation(a, b, oper);
+		
+	</script>
+</body>
+</html>
