@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		// es5
+
+		function Post(author, text, date) {
+			this.author = author;
+			this.text = text;
+			this.date = date;
+		}
+
+		Post.prototype.edit = function(new_text) {
+			this.text = new_text;
+		};
+
+
+		function AttachedPost(author, text, date){
+			Post.call(this, author, text, date);
+			this.highlight = false;
+		}
+
+		AttachedPost.prototype = Object.create(Post.prototype);
+		AttachedPost.constructor = AttachedPost;
+
+		AttachedPost.prototype.makeTextHighlighted = function() {
+			this.highlight = true;
+		}
+
+		let obj1 = new AttachedPost('dsf', 'tyui', 2010);
+		obj1.edit('qwertyuiop');
+		obj1.makeTextHighlighted();
+		console.log(obj1.author);
+		console.log(obj1.text);
+		console.log(obj1.date);
+		console.log(obj1.highlight);
+
+
+
+		// es6
+
+		class Post2 {
+			constructor(author, text, date){
+				this.author = author;
+				this.text = text;
+				this.date = date;
+			}
+
+			edit(new_text) {
+				this.text = new_text
+			}
+		}
+
+
+		class AttachedPost2 extends Post2 {
+			constructor(author, text, date){
+				super(author, text, date);
+				this.highlight = false;
+			}
+
+			makeTextHighlighted(){
+				this.highlight = true;
+			}
+		}
+
+
+		let obj2 = new AttachedPost2('ttt', 'd', 2000);
+		obj2.edit('qwertyuiop');
+		obj2.makeTextHighlighted();
+		console.log(obj2.author);
+		console.log(obj2.text);
+		console.log(obj2.date);
+		console.log(obj2.highlight);
+
+
+	</script>
+	
+</body>
+</html>
